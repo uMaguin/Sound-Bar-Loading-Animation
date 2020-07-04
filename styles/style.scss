@@ -1,0 +1,53 @@
+$margin: 90px;
+$width: 80px;
+$num-dots: 5;
+$initial-height: $width;
+$desired-height: 600px;
+
+body {
+  background: #111;
+}
+
+.container {
+  width: 5 * ($width + $margin) - $margin;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+}
+
+.dot {
+  position: absolute;
+  width: $width;
+  height: $initial-height;
+  background: gray;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  animation: scale 2s infinite;
+}
+
+@for $i from 1 through $num-dots {
+  div:nth-child(#{$i}) {
+    @if ($i > 1) {
+      left: ($i - 1) * ($width + $margin);  
+    }
+    animation-delay: 0.2s * $i;
+  }
+}
+
+@keyframes scale {
+  0% {}
+  20% {
+    height: $desired-height;
+    transform: translate(0, -60%);
+    background-color: #fff;
+  }
+  70% {
+    height: $initial-height;
+    
+  }
+}
+
