@@ -15,7 +15,7 @@ O Discord é um aplicativo de VoIP gratuito, projetado para criar comunidades qu
 
 ---
 
-    <img src="gif.gif" align="center"></img>
+<img src="gif.gif" align="center"></img>
 
 ---
 
